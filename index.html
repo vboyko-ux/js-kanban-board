@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Канбан Дошка</h1>
+        <button id="addBtn">+ Додати задачу</button>
+    </div>
+
+    <div class="board">
+        <div class="column" data-status="todo">
+            <h2>Треба зробити <span class="count">0</span></h2>
+            <div class="task-list"></div>
+        </div>
+        <div class="column" data-status="in-progress">
+            <h2>В процесі <span class="count">0</span></h2>
+            <div class="task-list"></div>
+        </div>
+        <div class="column" data-status="done">
+            <h2>Готово <span class="count">0</span></h2>
+            <div class="task-list"></div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Нова задача</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <input type="text" id="taskTitle" placeholder="Заголовок задачі" required>
+                <textarea id="taskDesc" placeholder="Опис..." rows="3"></textarea>
+                <select id="taskPriority">
+                    <option value="low">Низький пріоритет</option>
+                    <option value="medium" selected>Середній пріоритет</option>
+                    <option value="high">Високий пріоритет</option>
+                </select>
+                <div class="modal-actions">
+                    <button type="button" id="cancelBtn" class="btn-cancel">Скасувати</button>
+                    <button type="submit" class="btn-save">Зберегти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+body { background: #e9ecef; color: #333; padding: 20px; }
+
+.header { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 20px; }
+#addBtn { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; transition: 0.2s; }
+#addBtn:hover { background: #0056b3; }
+
+.board { display: flex; gap: 20px; max-width: 1200px; margin: 0 auto; align-items: flex-start; }
+.column { background: #f8f9fa; flex: 1; border-radius: 8px; padding: 15px; min-height: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.column h2 { font-size: 16px; margin-bottom: 15px; display: flex; justify-content: space-between; color: #495057; }
+.count { background: #dee2e6; padding: 2px 8px; border-radius: 12px; font-size: 14px; }
+.task-list { min-height: 300px; }
+
+/* Картки задач */
+.task { background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 10px; cursor: grab; border-left: 5px solid #ccc; position: relative; }
+.task:active { cursor: grabbing; }
+.task.dragging { opacity: 0.5; transform: scale(0.95); }
+.task h3 { font-size: 15px; margin-bottom: 5px; }
+.task p { font-size: 13px; color: #6c757d; margin-bottom: 10px; }
+.delete-btn { position: absolute; top: 10px; right: 10px; background: #dc3545; color: white; border: none; border-radius: 3px; cursor: pointer; padding: 2px 6px; font-size: 12px; }
+
+/* Кольори пріоритетів */
+.priority-low { border-left-color: #28a745; }
+.priority-medium { border-left-color: #ffc107; }
+.priority-high { border-left-color: #dc3545; }
+
+/* Drag & Drop Placeholder */
+.drag-over { background: #e2e6ea; border: 2px dashed #adb5bd; border-radius: 6px; }
+
+/* Модальне вікно */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.modal.hidden { display: none; }
+.modal-content { background: white; padding: 25px; border-radius: 8px; width: 400px; }
+.modal-content input, .modal-content textarea, .modal-content select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ced4da; border-radius: 4px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.btn-cancel { background: #6c757d; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+.btn-save { background: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; }
+
+@media (max-width: 768px) { .board { flex-direction: column; } }
